@@ -629,7 +629,6 @@ body {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-<<<<<<< HEAD
 /* ===============================
    BRAND COLOR OVERRIDES
    =============================== */
@@ -758,7 +757,5 @@ h2.text-primary::after {
   ) 1;
 }
 
-=======
->>>>>>> 1d67c04852c1e205c65123c1767ccbed824526df
 
 
