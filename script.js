@@ -14,34 +14,38 @@ window.addEventListener("load", () => {
 //   window.open(whatsappURL, "_blank");
 // }
 function openWhatsAppChat() {
-  const phoneNumber = "919500008025"; // 🔴 Replace with your WhatsApp number
-  let message = "Hello! I would like to know more about Right Hands.";
+  const phoneNumber = "918754366931";
+  let message = "Hello 👋 I visited the Right Hands website and would like to know more about your programs for children.";
 
-  const hash = window.location.hash;
+  const sections = document.querySelectorAll("section");
+  let activeSectionId = "";
 
-  switch (hash) {
-    case "#home":
-      message = "Hello! I am visiting the Right Hands website and would like to know more.";
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      activeSectionId = section.id;
+    }
+  });
+
+  switch (activeSectionId) {
+    case "home":
+      message = "Hello 👋 I’m exploring the Right Hands website and would like an overview of your services and approach.";
       break;
 
-    case "#about":
-      message = "Hi! I want to know more about Right Hands mission and vision.";
+    case "about":
+      message = "Hello 👋 I would like to understand more about Right Hands’ mission, vision, and the children you support.";
       break;
 
-    case "#programs":
-      message = "Hello! I am interested in learning about your therapy and training programs.";
+    case "programs":
+      message = "Hello 👋 I’m interested in learning more about your therapy and adaptive training programs.Could you please share details and enrollment information?";
       break;
 
-    case "#coaches":
-      message = "Hi! I would like to know more about your coaches and training approach.";
+    case "coaches":
+      message = "Hello 👋  I’d like to know more about your coaches, their qualifications, and training methods.";
       break;
 
-    case "#testimonials":
-      message = "Hello! I read the testimonials and would like more details.";
-      break;
-
-    case "#contact":
-      message = "Hi! I want to contact Right Hands for more information.";
+    case "testimonials":
+      message = "Hello 👋 I read the testimonials on your website and would like more details about the experiences and outcomes.";
       break;
   }
 
@@ -50,6 +54,7 @@ function openWhatsAppChat() {
 
   window.open(whatsappURL, "_blank");
 }
+
 
 
 
