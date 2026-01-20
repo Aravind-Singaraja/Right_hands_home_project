@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 // function openWhatsAppChat() {
 //   const phoneNumber = "919876543210"; // 🔴 Replace with your WhatsApp number
 //   const message = "Hello, I would like to know more about Right Hands programs.";
-  
+
 //   const whatsappURL =
 //     "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
 
@@ -55,7 +55,20 @@ function openWhatsAppChat() {
   window.open(whatsappURL, "_blank");
 }
 
+let lastScrollY = window.scrollY;
+const mobileFooter = document.getElementById("mobile-footer");
 
+window.addEventListener("scroll", () => {
+  if (!mobileFooter) return;
+
+  if (window.scrollY > lastScrollY) {
+    mobileFooter.classList.add("hide"); // scroll down
+  } else {
+    mobileFooter.classList.remove("hide"); // scroll up
+  }
+
+  lastScrollY = window.scrollY;
+});
 
 
 
